@@ -1,0 +1,23 @@
+name: Java CI (All Branches)
+
+on:
+  push:    # Срабатывает при любом push в любую ветку
+  pull_request:  # Срабатывает для любого PR
+
+jobs:
+  build:
+    runs-on: maven:3.9.9-eclipse-temurin-17-noble
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven  # Автокэширование зависимостей
+
+      - name: Build and test
+        run: mvn -B verify  # Компиляция + тесты
