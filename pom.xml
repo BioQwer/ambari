@@ -88,7 +88,6 @@
     <deb.section>universe/admin</deb.section>
     <deb.architecture>i386 amd64</deb.architecture>
     <deb.priority>extra</deb.priority>
-    <deb.version>${revision}</deb.version>
     <stack.distribution>BIGTOP</stack.distribution>
     <ambari.dir>${project.basedir}</ambari.dir>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -176,7 +175,7 @@
         <plugin>
           <groupId>org.vafer</groupId>
           <artifactId>jdeb</artifactId>
-          <version>1.8</version>
+          <version>1.13</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -411,9 +410,6 @@
             <goals>
               <goal>jdeb</goal>
             </goals>
-            <configuration>
-              <deb>${project.build.directory}/${project.artifactId}_${deb.version}_all.deb</deb>
-            </configuration>
           </execution>
         </executions>
         <configuration>
