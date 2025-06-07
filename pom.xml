@@ -88,6 +88,7 @@
     <deb.section>universe/admin</deb.section>
     <deb.architecture>i386 amd64</deb.architecture>
     <deb.priority>extra</deb.priority>
+    <deb.version>${revision}</deb.version>
     <stack.distribution>BIGTOP</stack.distribution>
     <ambari.dir>${project.basedir}</ambari.dir>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -410,6 +411,9 @@
             <goals>
               <goal>jdeb</goal>
             </goals>
+            <configuration>
+              <deb>${project.build.directory}/${project.artifactId}_${deb.version}_all.deb</deb>
+            </configuration>
           </execution>
         </executions>
         <configuration>
